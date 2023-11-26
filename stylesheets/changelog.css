@@ -1,0 +1,12 @@
+/* this stylesheet is used for the following page:
+https://paytouse.github.io/afk-speed/pages/changelog.html */
+
+body {
+  margin: 8px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  border: none;
+}

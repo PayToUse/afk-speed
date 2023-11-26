@@ -1,0 +1,5 @@
+/* using a seperate stylesheet in order to make the project's code, clean and organized */
+@font-face {
+  font-family: "Whitney";
+  src: url(/fonts/whitneybook.otf);
+}
