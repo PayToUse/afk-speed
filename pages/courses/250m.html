@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/course.css">
+  <link rel="stylesheet" href="/stylesheets/fonts.css">
+  <script src="/scripts/courses.js"></script>
+  <title>250m Run Course</title>
+</head>
+<body>
+  <h1>250m Run Course</h1>
+  <p>in this page, you get to wait for a while, and see the result of the run</p>
+  <p>you have nothing to do here, so just wait patiently, but if the run takes longer than you could expect, please train again or just wait for much longer until it's finished</p>
+  <span id="result"></span>
+  <br>
+  <br>
+  <button onclick="window.location.href='/index.html'">Go back</button>
+  <script type="text/javascript">
+    var length = 250;
+    var result = Math.trunc(calculateTime(length));
+    var time = result * 25;
+    document.getElementById("result").innerHTML = "Course is ongoing, please wait...";
+
+    setTimeout(() => {
+      document.getElementById("result").innerHTML = "Result: " + result + " seconds";
+      
+      var multiplier = localStorage.getItem('trainingMultiplier') || 0;
+      var currentMultiplier = parseInt(multiplier);
+      var newMultiplier = currentMultiplier + 5;
+      localStorage.setItem('trainingMultiplier', newMultiplier);
+
+      var distance = localStorage.getItem('overallCompetitiveDistance') || 0;
+      var currentDistance = parseInt(distance);
+      var newDistance = currentDistance + length;
+      localStorage.setItem('overallCompetitiveDistance', newDistance);
+    }, time);
+  </script>
+</body>
+</html>
